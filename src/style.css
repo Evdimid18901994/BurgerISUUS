@@ -65,6 +65,7 @@
     box-shadow: 10px 10px 5px gray; /* Добавление тени с серым цветом */
     width: 50%; /* Ширина изображения составляет 50% от ширины родительского элемента */
     height: auto; /* Автоматическое подстраивание высоты для сохранения пропорций */
+    
 }
 
 /* Эффект при наведении на изображение */
@@ -198,6 +199,36 @@ footer a {
     display: none;
 }
 
+.navbar ul .work {
+    position: relative;
+    display: flex;
+    z-index: 10;
+}
+
+.navbar ul .work ul {
+    position:absolute;
+    flex-direction: column;
+    left:0;
+    top:100%;
+    width: 100px;
+    display:none;
+    padding:0;
+    z-index:20;
+}
+.navbar ul .work ul li {
+    z-index:20;
+    background-color: #7cc6e5;
+    margin-bottom:2px;
+}
+.navbar ul .work:hover ul {
+    display:block;
+}
+
+.navbar ul .work ul li:hover {
+    background-color: white;
+    border-radius: 0;
+}
+
 
 @media (max-width: 700px) {
     /* При ширине экрана до 700px */
@@ -323,7 +354,7 @@ footer a {
         border-radius: 5%;
     }
 
-    .navbar ul li a:hover{
+    .navbar ul:hover li:hover a{
         color: white;
     }
 
@@ -351,6 +382,30 @@ footer a {
 
     .navbar.open .burger span:nth-child(3) {
         transform:translateY(0) rotate(-45deg);
+    }
+
+    .navbar ul .work ul {
+        position:absolute;
+        flex-direction: column;
+        left:10px;
+        top:0;
+        width: 100px;
+        display:none;
+        padding:0;
+        z-index:20;
+    }
+
+    .navbar ul .work ul li {
+        margin-top:0;
+        margin-bottom: 10px;
+        background-color: unset;
+        font-size: 1.2rem;
+        margin-left: 10px;
+    }
+
+    .navbar ul .work ul li:hover {
+        background-color: black;
+        color: white;
     }
 
 
